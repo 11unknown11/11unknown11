@@ -177,3 +177,97 @@ x,y = input("X,Y : ").split(",")
 siyahi = list(filter(lambda x: x%6!=0,range(int(x),int(y))))
 print(siyahi)
 
+
+
+
+
+
+
+
+#ELAVELER
+#40 Yeni siyahı(list) yaradın və daxil edilmiş (input funlsiyasi ilə) ədədə qədər olan və 3 rəqəmi ilə bitən
+#ədədləri həmin siyahiya əlavə edin
+new = []
+daxileded = int(input())
+
+for eded in range(1, daxileded):
+    if str(eded).endswith("3"):
+        new.append(eded)
+
+for eded in new:
+    print(eded, end=' ')
+#3. Verilmiş ədədin içində bütün rəqəmlərin olub olmamasını yoxlayan funksiya yazın.
+reqemler = [str(i) for i in range(0, 10)]
+reqemler_ = [0 for i in range(0, 10)]
+text = input()
+for i in text:
+    reqemler_[reqemler.index(i)] = 1
+
+for i in range(0, 10):
+    if reqemler_[i] == 0:
+        print(reqemler[i], end=' ')
+
+#5. Ədədin onu təşkil edən rəqəmlərin cəminə qalıqsız bölündüyünü müəyyən edən funksiya yazın.
+a = input()
+cem = 0
+for i in a:
+    cem += int(i)
+if int(a) % cem == 0:
+    print("qaliqsiz bolunur")
+else:
+    print("qaliqli bolunur")
+
+
+#6 Ədədin rəqəmlərinin hasilinin rəqəm olması üçün neçə dövr getməli olduğunu bildirən funksiya yazın.
+eded = input()
+hasil = 1
+addimlarin_sayi = 0
+while True:
+    for i in eded:
+        hasil *= int(i)
+    addimlarin_sayi += 1
+    eded = str(hasil)
+    hasil = 1
+    if len(eded) == 1:
+        break
+print(addimlarin_sayi)
+
+#12. Çıxışda 100-ə qədər olan Fibonaçi ədədlərini göstərən proqram yazın.
+a = 0
+a1 = 1
+
+for i in range(100):
+    a, a1 = a1, a + a1
+    if a > 100:
+        break
+    print(a, end=" ")
+
+# 27. Arqument kimi tək bir sətri götürən və sətirdəki bütün böyük hərflərin indekslərin olduğu sıralanmış
+# siyahı(list) qaytaran funksiya yaradın. myFunction(“HeLlo WorD”) → [0,2,6,9]
+
+text = input() #Hello world
+               #0123456789 10
+new = []
+
+for i in range(len(text)): # HellO WorlD (0, 1, 3 ..... 10)
+    if text[i].isupper(): # text[4] => o  'o'.isupper()
+        new.append(i)
+
+print(new)
+
+#28 isogram dublikat hərfləri olmayan sözdür. Sətir götürən və "isogram" olub-olmamasından asılı olaraq True və
+#ya False qaytaran funksiya yaradın.
+
+text = input() # isogram
+
+eded_isogramdir = True
+
+for i in text:
+    if text.count(i) != 1: #2
+        eded_isogramdir = False
+        break
+
+if eded_isogramdir == True:
+    print('eded isogrisogramdir')
+else:
+    print('eded isogram deyil')
