@@ -271,3 +271,18 @@ if eded_isogramdir == True:
     print('eded isogrisogramdir')
 else:
     print('eded isogram deyil')
+    
+  
+#tapsiriq 2
+def tekrar(soz):
+    a=""
+    b=""
+    for i in soz:
+        if i!=a:
+            b=b+i
+        a=i
+    return b
+soz=list(input())
+print(tekrar(soz))
+   
+    
